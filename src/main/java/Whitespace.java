@@ -7,26 +7,13 @@ import java.util.Scanner;
 
 public class Whitespace {
 
-//    private void checkFile(String filename) {
-//        // open file named filename
-//        try {
-//            File myObj = new File(filename);
-//            Scanner myReader = new Scanner(myObj);
-//            while (myReader.hasNextLine()) {
-//                String data = myReader.nextLine();
-//                System.out.println(countBoth(data));
-//            }
-//            myReader.close();
-//        } catch (FileNotFoundException e) {
-//
-//        }
-//    }
+    private void checkFile(String filename) {
+        // open file named filename
+
+    }
 
     public static void main(String[] args) throws IOException {
         Whitespace wspc = new Whitespace();
-
-//        wspc.checkFile("testdata1.txt");
-        // attempting to copy method for pulling file from ParenSymmetry failed
 
         // for each file "testdata{1,2,3}.txt
         // read in all the text and
@@ -34,6 +21,18 @@ public class Whitespace {
 
         wspc.countBoth("a b c d e"); // should print 4, 5
 
+        StringBuilder stringBuilder = new StringBuilder();
+        try {
+            File myObj = new File("testdata1.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                wspc.countBoth(data);
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+
+        }
     }
 
     private void countBoth(String testdata) {
