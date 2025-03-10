@@ -1,11 +1,32 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Scanner;
 
 public class Whitespace {
 
+//    private void checkFile(String filename) {
+//        // open file named filename
+//        try {
+//            File myObj = new File(filename);
+//            Scanner myReader = new Scanner(myObj);
+//            while (myReader.hasNextLine()) {
+//                String data = myReader.nextLine();
+//                System.out.println(countBoth(data));
+//            }
+//            myReader.close();
+//        } catch (FileNotFoundException e) {
+//
+//        }
+//    }
+
     public static void main(String[] args) throws IOException {
         Whitespace wspc = new Whitespace();
+
+//        wspc.checkFile("testdata1.txt");
+        // attempting to copy method for pulling file from ParenSymmetry failed
 
         // for each file "testdata{1,2,3}.txt
         // read in all the text and
@@ -16,6 +37,18 @@ public class Whitespace {
     }
 
     private void countBoth(String testdata) {
+        int whitespaces = 0;
+        int nonwhitespaces = 0;
+
+        for (int i = 0; i < testdata.length(); i++) {
+            if (testdata.charAt(i) == ' ' || testdata.charAt(i) == '\t' || testdata.charAt(i) == '\n' || testdata.charAt(i) == '\r') {
+                whitespaces++;
+            }
+            else nonwhitespaces++;
+        }
+
+        System.out.println (whitespaces + ", " + nonwhitespaces);
+
 
         // count the number of whitepace chars and non-whitspace chars.
         // need to use a FOR loop.
